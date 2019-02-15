@@ -15,5 +15,5 @@ credential_loc: "/home/pkakati/BOA/ansible/roles/BOA_Role/credential/.user_pass.
 projectName: 
 tarFileName:  
 artifactoryUrl: "http://192.168.1.20:8081/artifactory/ext-release-local/artifacts-20190204184846481.zip"
-zipFileName: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/zipDir/artifacts-20190204184846481.zip"
+zipFileName: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/zipDir/"
 cmdArray: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/bin/ImportScript.sh "
