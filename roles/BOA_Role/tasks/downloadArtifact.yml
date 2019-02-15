@@ -1,0 +1,4 @@
+---
+- name: Download artifact from Artifactory
+  shell: " curl -l {{ artifactoryUrl }} -o {{ zipFileName }}"
+  no_log: true

@@ -1,0 +1,5 @@
+---
+# tasks file for ./roles/BOA_Role
+- include_tasks: downloadArtifact.yml
+- include_tasks: checkAllVariable.yml
+- include_tasks: importApi.yml

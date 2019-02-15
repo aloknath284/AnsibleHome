@@ -1,0 +1,23 @@
+---
+- name: Variable are load
+  set_fact: 
+     cmdArray: " {{cmdArray}} -{{ item }} {{ vars[item] }}" 
+  when: not(
+              (lookup('vars', item) is undefined)
+              or
+              (lookup('vars', item) is none)
+              or 
+              (lookup('vars', item) | trim == '')
+          )
+
+  loop:
+    - bedrockUrl
+    - logFileLoc 
+    - userName
+    - projectName
+    - tarFileName
+    - zipFileName
+    - newRevision
+    - updateAllConflicts 
+    - timeout
+  no_log: true
