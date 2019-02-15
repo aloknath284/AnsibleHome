@@ -1,7 +1,7 @@
 ---
 - name: Retrive credential of user
   include_vars: "{{ credential_loc}}"
-  no_log: true
+  #no_log: true
 - name: Import Artifact to ZDP
   shell: "{{cmdArray}} -password '{{ vars[userName+ '_pass']}}' | tee {{buildBaseDir}}/log.txt"
   register: ImportLogs
