@@ -6,11 +6,11 @@
 - name: Extract importLogsOutput
   set_fact:
     out: " {{ importLogs.stdout }} "
-- name: check 
-  shell: "echo '{{out}}' | tee {{buildBaseDir}}/log1.txt"
+- name: Download all task logs
+  shell: "echo '{{out}}' | tee {{buildBaseDir}}/log.txt"
  
-- name: Import Artifact to ZDP
-  shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
+#- name: Import Artifact to ZDP
+#  shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
   
 - name: Debug Log
   shell: grep -o '[^ ]*\.txt' '{{ buildBaseDir }}'log.txt | tee '{{buildBaseDir}}'/newLogList.txt
