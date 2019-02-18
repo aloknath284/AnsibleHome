@@ -1,3 +1,18 @@
 ---
 # vars file for ./roles/BOA_Role
+newRevision: 
+updateAllConflicts: 
+timeout: 
+bedrockUrl: 
+ansibleHome: 
+buildBaseDir: 
+logFileLoc: 
 
+
+userName: 
+credential_loc: 
+projectName: 
+tarFileName:  
+artifactoryUrl: 
+zipFileName:
+cmdArray: 
