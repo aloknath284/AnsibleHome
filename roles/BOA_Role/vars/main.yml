@@ -8,11 +8,11 @@ ansibleHome:
 buildBaseDir: 
 logFileLoc: 
 
+artifactoryAbsoluteUrl:
 
-userName: 
-credential_loc: 
+userName:  
 projectName: 
-tarFileName:  
-artifactoryUrl: 
+tarFileName:   
 zipFileName:
+
 cmdArray: ' '
