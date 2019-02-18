@@ -21,3 +21,7 @@
     - updateAllConflicts 
     - timeout
   #no_log: true
+  
+  - name: Elll
+    debug:
+      msg: "{{cmdArray}}"
