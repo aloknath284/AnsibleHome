@@ -2,6 +2,7 @@
 - name: Variable are load
   set_fact: 
      cmdArray: " {{cmdArray}} -{{ item }} {{ vars[item] }}" 
+  register: outArray
   when: not(
               (lookup('vars', item) is undefined)
               or
@@ -24,5 +25,5 @@
   
 - name: Variable are load
   debug:
-    msg: "{{cmdArray}}"
+    msg: "{{outArray}}"
   
