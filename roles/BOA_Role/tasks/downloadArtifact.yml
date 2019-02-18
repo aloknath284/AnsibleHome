@@ -8,10 +8,26 @@
   shell: "echo '{{artifactName}}' |awk -F . '{if (NF>1) {print $NF}}'"
   register: extension
   
-- name: Debug
-  debug:
-    msg: "{{extension.stdout}}"
-  
+#- name: Debug
+#  debug:
+#    msg: "{{extension.stdout}}"
+
+- name: TarFileName is set
+  set_fact:
+     tarFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
+  when: (extension.stdout == 'tar' )
+     
+- name: Download artifact from Artifactory if it is tar
+  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
+  when: not(
+          (tarFileName is undefined)
+          or
+          (tarFileName  is none)
+          or
+          (tarFileName | trim == '')
+        )
+
+
 - name: ZipFileName is set
   set_fact:
      zipFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
