@@ -20,4 +20,4 @@
     - newRevision
     - updateAllConflicts 
     - timeout
-  no_log: true
+  #no_log: true
