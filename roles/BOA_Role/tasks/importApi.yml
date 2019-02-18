@@ -1,8 +1,7 @@
 ---
 - name: Import Artifact to ZDP
   shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
-  register: ImportLogs
-
+  
 - name: Debug Log
   shell: grep -o '[^ ]*\.txt' '{{ buildBaseDir }}'log.txt | tee '{{buildBaseDir}}'/newLogList.txt
   
