@@ -3,9 +3,23 @@
   set_fact:
      artifactoryAbsoluteUrl: "{{artifactoryUrl}}{{artifactName}}"
   no_log: true
+  
+  
+  
+  
+  
+  
 - name: ZipFileName is set
   set_fact:
      zipFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
      
-- name: Download artifact from Artifactory
+- name: Download artifact from Artifactory if it is zip
   shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
+  when: not(
+          (zipFileName is undefined)
+          or
+          (zipFileName  is none)
+          or
+          (zipFileName | trim == '')
+        )
+
