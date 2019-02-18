@@ -1,4 +1,12 @@
 ---
+- name: Artfactory absolute path is set
+  set_fact:
+     artifactoryAbsoluteUrl: "{{artifactoryUrl}}{{artifactName}}"
+  no_log: true
+- name: ZipFileName is set
+  set_fact:
+     zipFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
+     
 - name: Download artifact from Artifactory
   shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
 #- get_url:
