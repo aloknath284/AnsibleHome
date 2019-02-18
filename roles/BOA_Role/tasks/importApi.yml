@@ -3,13 +3,11 @@
   shell: "{{cmdArray}} -password '{{ zdp_password }}' "
   register: importLogs
   no_log: true
-  
-- name: LLL
+- name: Extract importLogsOutput
   set_fact:
     out: " {{ importLogs.stdout }} "
 - name: check 
-  debug:
-    msg: "{{out}}"
+  shell: "echo '{{out}}' | tee {{buildBaseDir}}/log1.txt"
  
 - name: Import Artifact to ZDP
   shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
