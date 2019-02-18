@@ -1,19 +1,19 @@
 ---
 # vars file for ./roles/BOA_Role
 
-newRevision: false
-updateAllConflicts: true
-timeout: 1200
-bedrockUrl: http://192.168.1.235:8080
-ansibleHome: /home/pkakati/BOA/ansible/
-buildBaseDir: /home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/
-logFileLoc: /home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/logs
+#newRevision: false
+#updateAllConflicts: true
+#timeout: 1200
+#bedrockUrl: http://192.168.1.235:8080
+#ansibleHome: /home/pkakati/BOA/ansible/
+#buildBaseDir: /home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/
+#logFileLoc: /home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/logs
 
 
-userName:
-credential_loc: "/home/pkakati/BOA/ansible/roles/BOA_Role/credential/.user_pass.yml"
-projectName: 
-tarFileName:  
-artifactoryUrl: "http://192.168.1.20:8081/artifactory/ext-release-local/artifacts-20190204184846481.zip"
-zipFileName: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/zipDir/artifacts-20190204184846481.zip"
-cmdArray: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/bin/ImportScript.sh "
+userName: "{{ zdp_username }}"
+#credential_loc: "/home/pkakati/BOA/ansible/roles/BOA_Role/credential/.user_pass.yml"
+#projectName: 
+#tarFileName:  
+#artifactoryUrl: "http://192.168.1.20:8081/artifactory/ext-release-local/artifacts-20190204184846481.zip"
+#zipFileName: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/zipDir/artifacts-20190204184846481.zip"
+#cmdArray: "/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/bin/ImportScript.sh "
