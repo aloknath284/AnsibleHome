@@ -1,7 +1,7 @@
 ---
-#- name: Download artifact from Artifactory
-#  shell: " curl -l {{ artifactoryUrl }} -o {{ zipFileName }}"
-- get_url:
-      url: "{{ artifactoryUrl }}"
-      dest: "{{ zipFileName }}"
-      mode: 0440
+- name: Download artifact from Artifactory
+  shell: " curl -l {{ artifactoryUrl }} -o {{ zipFileName }}"
+#- get_url:
+#     url: "{{ artifactoryUrl }}"
+#      dest: "{{ zipFileName }}"
+#      mode: 0440
