@@ -22,6 +22,6 @@
     - timeout
   #no_log: true
   
-  - name: Elll
+- name: Elll
     debug:
       msg: "{{cmdArray}}"
