@@ -5,7 +5,7 @@
   no_log: true
   
 - name: Find artifact file type
-  shell: "$(echo $artifactName |awk -F . '{if (NF>1) {print $NF}}')"
+  shell: "echo '{{artifactName}}' |awk -F . '{if (NF>1) {print $NF}}'"
   register: extension
 - name: Debug
   debug:
