@@ -9,7 +9,3 @@
      
 - name: Download artifact from Artifactory
   shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
-#- get_url:
-#     url: "{{ artifactoryUrl }}"
-#      dest: "{{ zipFileName }}"
-#      mode: 0440
