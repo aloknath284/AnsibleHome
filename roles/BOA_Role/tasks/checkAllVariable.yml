@@ -1,8 +1,19 @@
 ---
 - name: Script Load
   set_fact: 
-     cmdArray: "{{scriptName}}"
+     cmdArray: "{{ buildBaseDir}}/bin/ImportScript.sh "
   no_log: true
+  
+- name: Artfactory absolute path is set
+  set_fact:
+     artifactoryAbsoluteUrl: "{{artifactoryUrl}}{{artifactName}}"
+  no_log: true
+- name: ZipFileName is set
+  set_fact:
+     zipFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
+- name: Remote log directory set
+  set_fact:
+     logFileLoc: "{{ buildBaseDir }}/logs"
      
 - name: Variable are load
   set_fact: 
