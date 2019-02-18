@@ -9,15 +9,15 @@
 - name: Debug Log
   shell: grep -o '[^ ]*\.txt' '{{ buildBaseDir }}'log.txt | tee '{{buildBaseDir}}'/newLogList.txt
   
-- name: Download the list of newly created log file
-  fetch: 
-    src: "{{buildBaseDir}}/newLogList.txt"
-    dest: "{{ansibleHome}}"
-    flat: yes
+#- name: Download the list of newly created log file
+#  fetch: 
+#    src: "{{buildBaseDir}}/newLogList.txt"
+#    dest: "{{ansibleHome}}"
+#    flat: yes
 
-- name: Dowload Logs for each tar
-  fetch:
-    src: "{{item}}"
-    dest: "{{ansibleHome}}/logs/"
-    flat: yes
-  with_lines: cat "{{ansibleHome}}/newLogList.txt"
+#- name: Dowload Logs for each tar
+#  fetch:
+#    src: "{{item}}"
+#    dest: "{{ansibleHome}}/logs/"
+#    flat: yes
+#  with_lines: cat "{{ansibleHome}}/newLogList.txt"
