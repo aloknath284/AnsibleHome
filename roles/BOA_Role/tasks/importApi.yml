@@ -20,12 +20,12 @@
 - name: Download the list of newly created log file
   fetch: 
     src: "{{buildBaseDir}}/newLogList.txt"
-    dest: "{{logFileLoc}}"
+    dest: "{{logFileLocAnsible}}"
     flat: yes
 
 - name: Dowload Logs for each tar
    fetch:
     src: "{{item}}"
-    dest: "{{logFileLoc}}"
+    dest: "{{logFileLocAnsible}}"
     flat: yes
-  with_lines: cat "{{logFileLoc}}/newLogList.txt"
+  with_lines: cat "{{logFileLocAnsible}}/newLogList.txt"
