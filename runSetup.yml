@@ -1,5 +1,6 @@
 ---
  - hosts: 192.168.1.235
+   gather_facts: True
    remote_user: bedrock
    roles:
    - BOA_Role
