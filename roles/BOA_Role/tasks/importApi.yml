@@ -24,7 +24,7 @@
     flat: yes
 
 - name: Dowload Logs for each tar
-   fetch:
+  fetch:
     src: "{{item}}"
     dest: "{{logFileLocAnsible}}"
     flat: yes
