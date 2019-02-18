@@ -15,4 +15,4 @@ projectName:
 tarFileName:  
 artifactoryUrl: 
 zipFileName:
-cmdArray: 
+cmdArray: '/home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/bin/ImportScript.sh '
