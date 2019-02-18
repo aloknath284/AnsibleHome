@@ -4,10 +4,12 @@
      artifactoryAbsoluteUrl: "{{artifactoryUrl}}{{artifactName}}"
   no_log: true
   
-  
-  
-  
-  
+- name: Find artifact file type
+  shell: "$(echo $artifactName |awk -F . '{if (NF>1) {print $NF}}')"
+  register: extension
+- name: Debug
+  debug:
+    msg: "{{extension.stdout}}"
   
 - name: ZipFileName is set
   set_fact:
