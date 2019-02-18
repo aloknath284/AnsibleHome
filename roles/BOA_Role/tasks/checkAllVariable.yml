@@ -1,4 +1,8 @@
 ---
+- name: Script Load
+  set_fact: 
+     cmdArray: "{{scriptName}}"
+     
 - name: Variable are load
   set_fact: 
      cmdArray: " {{cmdArray}} -{{ item }} {{ vars[item] }}" 
@@ -22,7 +26,4 @@
     - timeout
   #no_log: true
   
-- name: Variable are load
-  debug:
-    msg: "{{ hostvars[cmdArray] }}"
   
