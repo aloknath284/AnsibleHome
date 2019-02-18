@@ -6,7 +6,10 @@
   
 - name: LLL
   set_fact:
-    out: importLogs.stdout_lines
+    out: " {{ importLogs.stdout }} "
+- name: check 
+  debug:
+    msg: "{{out}}"
  
 - name: Import Artifact to ZDP
   shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
