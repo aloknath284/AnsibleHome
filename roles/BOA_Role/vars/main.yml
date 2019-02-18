@@ -10,7 +10,7 @@
 #logFileLoc: /home/bedrock/Pro_Dev/CI_CD/ansibleBuild/ImportApi/logs
 
 
-userName: "{{ zdp_username }}"
+#userName: "{{ zdp_username }}"
 #credential_loc: "/home/pkakati/BOA/ansible/roles/BOA_Role/credential/.user_pass.yml"
 #projectName: 
 #tarFileName:  
