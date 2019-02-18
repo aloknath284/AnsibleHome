@@ -3,7 +3,7 @@
   #include_vars: "{{ credential_loc}}"
   #no_log: true
 - name: Import Artifact to ZDP
-  shell: "{{cmdArray}} -password '{{ vars[ userName ]}}' | tee {{buildBaseDir}}/log.txt"
+  shell: "{{cmdArray}} -password '{{ userName }}' | tee {{buildBaseDir}}/log.txt"
   register: ImportLogs
 
 - name: Debug Log
