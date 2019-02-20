@@ -1,14 +1,14 @@
----
-- name: Import Artifact to ZDP1
-  shell: "{{cmdArray}} -password '{{ zdp_password }}' "
-  register: importLogs
-  no_log: true
-- name: Extract importLogsOutput
-  set_fact:
-    out: " {{ importLogs.stdout }} "
-- name: Download all task logs
-  shell: "echo '{{out}}' | tee {{buildBaseDir}}/log.txt"
-  no_log: true
+#---
+#- name: Import Artifact to ZDP1
+#  shell: "{{cmdArray}} -password '{{ zdp_password }}' "
+#  register: importLogs
+#  no_log: true
+#- name: Extract importLogsOutput
+#  set_fact:
+#    out: " {{ importLogs.stdout }} "
+#- name: Download all task logs
+#  shell: "echo '{{out}}' | tee {{buildBaseDir}}/log.txt"
+#  no_log: true
  
 - name: Import Artifact to ZDP
   shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
