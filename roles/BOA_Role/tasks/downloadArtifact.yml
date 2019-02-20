@@ -13,13 +13,13 @@
 #    msg: "{{extension.stdout}}"
 - name: CreateArtifactStore Directory
   file:
-    path: "'{{buildBaseDir}}'/tarDir"
+    path: "'{{buildBaseDir}}'tarDir"
     state: directory
   when: (extension.stdout == 'tar' )
   
 - name: CreateArtifactStore Directory
   file:
-    path: "'{{buildBaseDir}}'/zipDir"
+    path: "'{{buildBaseDir}}'zipDir"
     state: directory
   when: (extension.stdout == 'zip' )
   
