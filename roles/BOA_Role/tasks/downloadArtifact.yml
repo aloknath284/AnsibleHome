@@ -10,10 +10,12 @@
   
 - name: CreateArtifactStore Directory for Tar
   shell: "mkdir -p '{{buildBaseDir}}'/tarDir"
+  warn: False
   when: (extension.stdout == 'tar' )
   
 - name: CreateArtifactStore Directory for Zip
   shell: "mkdir -p '{{buildBaseDir}}'zipDir"
+  warn: False
   when: (extension.stdout == 'zip' )
   
 - name: TarFileName is set
