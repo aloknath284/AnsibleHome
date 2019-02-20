@@ -22,7 +22,7 @@
   when: (extension.stdout == 'tar' )
      
 - name: Download artifact from Artifactory if it is tar
-  shell: " mkdir -p '{{buildBaseDir}}'/tarDir | curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
+  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
   when: not(
           (tarFileName is undefined)
           or
