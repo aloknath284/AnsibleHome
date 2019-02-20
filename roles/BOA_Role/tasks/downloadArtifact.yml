@@ -22,7 +22,7 @@
   when: (extension.stdout == 'tar' )
      
 - name: Download artifact from Artifactory if it is tar
-  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
+  shell: " curl -u {{artifactName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
   when: not(
           (tarFileName is undefined)
           or
@@ -38,7 +38,7 @@
   when: (extension.stdout == 'zip' )
      
 - name: Download artifact from Artifactory if it is zip
-  shell: " curl -u admin:password {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
+  shell: " curl -u {{artifactName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
   when: not(
           (zipFileName is undefined)
           or
