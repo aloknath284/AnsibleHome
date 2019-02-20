@@ -14,7 +14,7 @@
 
 - name: TarFileName is set
   set_fact:
-     tarFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
+     tarFileName: "{{buildBaseDir}}/tarDir/{{artifactName}}"
   when: (extension.stdout == 'tar' )
      
 - name: Download artifact from Artifactory if it is tar
