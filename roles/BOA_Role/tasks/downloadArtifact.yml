@@ -15,7 +15,7 @@
   file:
     path: /src/www
     state: directory
-   when: (extension.stdout == 'tar' )
+  when: (extension.stdout == 'tar' )
   
 - name: CreateArtifactStore Directory
   shell: "mkdir '{{buildBaseDir}}'/zipDir"
