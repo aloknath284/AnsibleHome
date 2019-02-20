@@ -2,7 +2,7 @@
 - name: Import Artifact to ZDP1
   shell: "{{cmdArray}} -password '{{ zdp_password }}' "
   register: importLogs
-  no_log: true
+  #no_log: true
 - name: Extract importLogsOutput
   set_fact:
     out: " {{ importLogs.stdout }} "
