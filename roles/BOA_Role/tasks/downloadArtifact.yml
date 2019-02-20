@@ -17,15 +17,15 @@
     state: directory
   when: (extension.stdout == 'tar' )
   
-- name: CreateArtifactStore Directory
-  file:
-    path: "'{{buildBaseDir}}'zipDir"
-    state: directory
-  when: (extension.stdout == 'zip' )
-  
 #- name: CreateArtifactStore Directory
-#  shell: "mkdir '{{buildBaseDir}}'/zipDir"
-#  when: (extension.stdout == 'zip' )
+ # file:
+  #  path: "'{{buildBaseDir}}'zipDir"
+   # state: directory
+  #when: (extension.stdout == 'zip' )
+  
+- name: CreateArtifactStore Directory
+  shell: "mkdir '{{buildBaseDir}}'/zipDir"
+  when: (extension.stdout == 'zip' )
   
 - name: TarFileName is set
   set_fact:
