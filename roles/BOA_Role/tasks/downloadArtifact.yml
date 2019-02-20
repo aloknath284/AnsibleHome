@@ -8,24 +8,9 @@
   shell: "echo '{{artifactName}}' |awk -F . '{if (NF>1) {print $NF}}'"
   register: extension
   
-#- name: Debug
-#  debug:
-#    msg: "{{extension.stdout}}"
-- name: CreateArtifactStore Directory
-  file:
-    path: "'{{buildBaseDir}}'tarDir"
-    state: directory
-  when: (extension.stdout == 'tar' )
-  
 #- name: CreateArtifactStore Directory
- # file:
-  #  path: "'{{buildBaseDir}}'zipDir"
-   # state: directory
-  #when: (extension.stdout == 'zip' )
-  
-- name: CreateArtifactStore Directory
-  shell: "mkdir -p '{{buildBaseDir}}'/zipDir"
-  when: (extension.stdout == 'zip' )
+#  shell: "mkdir -p '{{buildBaseDir}}'/zipDir"
+#  when: (extension.stdout == 'zip' )
   
 - name: TarFileName is set
   set_fact:
@@ -33,7 +18,7 @@
   when: (extension.stdout == 'tar' )
      
 - name: Download artifact from Artifactory if it is tar
-  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
+  shell: " mkdir -p '{{buildBaseDir}}'/tarDir | curl -l {{ artifactoryAbsoluteUrl }} -o {{ tarFileName }}"
   when: not(
           (tarFileName is undefined)
           or
@@ -49,7 +34,7 @@
   when: (extension.stdout == 'zip' )
      
 - name: Download artifact from Artifactory if it is zip
-  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
+  shell: " mkdir -p '{{buildBaseDir}}'/zipDir | curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
   when: not(
           (zipFileName is undefined)
           or
