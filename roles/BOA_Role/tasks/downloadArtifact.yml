@@ -34,7 +34,7 @@
   when: (extension.stdout == 'zip' )
      
 - name: Download artifact from Artifactory if it is zip
-  shell: " mkdir -p '{{buildBaseDir}}'/zipDir | curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
+  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
   when: not(
           (zipFileName is undefined)
           or
