@@ -38,7 +38,7 @@
   when: (extension.stdout == 'zip' )
      
 - name: Download artifact from Artifactory if it is zip
-  shell: " curl -l {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
+  shell: " curl -u admin:password {{ artifactoryAbsoluteUrl }} -o {{ zipFileName }}"
   when: not(
           (zipFileName is undefined)
           or
