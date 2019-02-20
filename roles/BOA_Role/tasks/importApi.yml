@@ -22,6 +22,7 @@
     src: "{{buildBaseDir}}/newLogList.txt"
     dest: "{{logFileLocAnsible}}"
     flat: yes
+  become: true
 
 - name: Dowload Logs for each tar
   fetch:
