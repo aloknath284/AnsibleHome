@@ -10,8 +10,8 @@
   shell: "echo '{{out}}' | tee {{buildBaseDir}}/log.txt"
   no_log: true
  
-#- name: Import Artifact to ZDP
-#  shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
+- name: Import Artifact to ZDP
+  shell: "{{cmdArray}} -password '{{ zdp_password }}' | tee {{buildBaseDir}}/log.txt"
   
 - name: Debug Log
   shell: grep -o '[^ ]*\.txt' '{{ buildBaseDir }}'log.txt | tee '{{buildBaseDir}}'/newLogList.txt
