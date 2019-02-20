@@ -13,7 +13,7 @@
   when: (extension.stdout == 'tar' )
   
 - name: CreateArtifactStore Directory for Zip
-  shell: "mkdir -p '{{buildBaseDir}}'/zipDir"
+  shell: "mkdir -p '{{buildBaseDir}}'zipDir"
   when: (extension.stdout == 'zip' )
   
 - name: TarFileName is set
