@@ -11,7 +11,14 @@
 #- name: Debug
 #  debug:
 #    msg: "{{extension.stdout}}"
-
+- name: CreateArtifactStore Directory
+  shell: "mkdir '{{buildBaseDir}}'/tarDir"
+  when:  when: (extension.stdout == 'tar' )
+  
+- name: CreateArtifactStore Directory
+  shell: "mkdir '{{buildBaseDir}}'/zipDir"
+  when:  when: (extension.stdout == 'zip' )
+  
 - name: TarFileName is set
   set_fact:
      tarFileName: "{{buildBaseDir}}/tarDir/{{artifactName}}"
