@@ -30,7 +30,7 @@
           or
           (tarFileName | trim == '')
         )
-
+  no_log: true
 
 - name: ZipFileName is set
   set_fact:
@@ -46,4 +46,5 @@
           or
           (zipFileName | trim == '')
         )
+  no_log: true
 
