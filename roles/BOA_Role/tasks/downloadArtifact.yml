@@ -14,7 +14,7 @@
   
 - name: Creates directory
   file:
-    path: "'{{buildBaseDir}}'/zipDir"
+    path: "{{buildBaseDir}}/zipDir"
     state: directory
     recurse: yes
   when: (extension.stdout == 'zip' )
