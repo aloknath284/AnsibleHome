@@ -8,17 +8,25 @@
   shell: "echo '{{artifactName}}' |awk -F . '{if (NF>1) {print $NF}}'"
   register: extension
   
-- name: CreateArtifactStore Directory for Tar
-  shell: "mkdir -p '{{buildBaseDir}}'/tarDir"
-  when: (extension.stdout == 'tar' )
+- name: CreateArtifactStore Directory for tar
+  file:
+    path: "{{buildBaseDir}}/tarDir"
+    state: directory
+    recurse: yes
+  when: (extension.stdout == 'tar' )  
   
-- name: Creates directory
+- name: CreateArtifactStore Directory for Zip
   file:
     path: "{{buildBaseDir}}/zipDir"
     state: directory
     recurse: yes
   when: (extension.stdout == 'zip' )
-  
+
+
+#- name: CreateArtifactStore Directory for Tar
+#  shell: "mkdir -p '{{buildBaseDir}}'/tarDir"
+#  when: (extension.stdout == 'tar' )  
+
 #- name: CreateArtifactStore Directory for Zip
 #  shell: "mkdir -p '{{buildBaseDir}}'/zipDir"
 #  when: (extension.stdout == 'zip' )
