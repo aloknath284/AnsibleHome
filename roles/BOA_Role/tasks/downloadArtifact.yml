@@ -16,6 +16,7 @@
   file:
     path: "'{{buildBaseDir}}'/zipDir"
     state: directory
+    recurse: yes
   when: (extension.stdout == 'zip' )
   
 #- name: CreateArtifactStore Directory for Zip
