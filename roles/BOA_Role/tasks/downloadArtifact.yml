@@ -36,9 +36,14 @@
   set_fact:
      zipFileName: "{{buildBaseDir}}/zipDir/{{artifactName}}"
   when: (extension.stdout == 'zip' )
-     
-- name: Download artifact from Artifactory if it is zip
-  shell: " curl -u {{artifactUserName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -fo {{ zipFileName }}"
+    
+- name: Download foo.conf
+  get_url:
+    url: {{ artifactoryAbsoluteUrl }}
+    dest: {{ zipFileName }}
+    url_username: {{artifactUserName}}
+    url_password: {{artifact_password}} 
+    mode: 0440
   when: not(
           (zipFileName is undefined)
           or
@@ -46,5 +51,15 @@
           or
           (zipFileName | trim == '')
         )
-  no_log: true
+     
+#- name: Download artifact from Artifactory if it is zip
+#  shell: " curl -u {{artifactUserName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -fo {{ zipFileName }}"
+#  when: not(
+#          (zipFileName is undefined)
+#          or
+#          (zipFileName  is none)
+#          or
+ #         (zipFileName | trim == '')
+ #       )
+ # no_log: true
 
