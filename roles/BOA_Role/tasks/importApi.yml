@@ -23,9 +23,9 @@
     dest: "{{logFileLocAnsible}}"
     flat: yes
 
-- name: Dowload Logs for each tar
-  fetch:
-    src: "{{item}}"
-    dest: "{{logFileLocAnsible}}"
-    flat: yes
-  with_lines: cat "{{logFileLocAnsible}}/newLogList.txt"
+#- name: Dowload Logs for each tar
+#  fetch:
+#    src: "{{item}}"
+#    dest: "{{logFileLocAnsible}}"
+ #   flat: yes
+#  with_lines: cat "{{logFileLocAnsible}}/newLogList.txt"
