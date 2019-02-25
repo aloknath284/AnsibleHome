@@ -74,13 +74,7 @@
     url_username: "{{artifactUserName}}"
     url_password: "{{artifact_password}}" 
     mode: 0440
-  when: not(
-          (zipFileName is undefined)
-          or
-          (zipFileName  is none)
-          or
-          (zipFileName | trim == '')
-        )
+ 
      
 #- name: Download artifact from Artifactory if it is zip
 #  shell: " curl -u {{artifactUserName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -fo {{ zipFileName }}"
