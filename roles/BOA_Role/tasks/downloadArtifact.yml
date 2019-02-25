@@ -39,10 +39,10 @@
     
 - name: Download foo.conf
   get_url:
-    url: {{ artifactoryAbsoluteUrl }}
-    dest: {{ zipFileName }}
-    url_username: {{artifactUserName}}
-    url_password: {{artifact_password}} 
+    url: "{{ artifactoryAbsoluteUrl }}"
+    dest: "{{ zipFileName }}"
+    url_username: "{{artifactUserName}}"
+    url_password: "{{artifact_password}}" 
     mode: 0440
   when: not(
           (zipFileName is undefined)
