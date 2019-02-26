@@ -17,11 +17,11 @@
   shell: grep -o '[^ ]*\.txt' '{{ buildBaseDir }}'log.txt | tee '{{buildBaseDir}}'/newLogList.txt
   no_log: true
   
-- name: Download the list of newly created log file
-  fetch: 
-    src: "{{buildBaseDir}}/newLogList.txt"
-    dest: "{{logFileLocAnsible}}"
-    flat: yes
+#- name: Download the list of newly created log file
+#  fetch: 
+#    src: "{{buildBaseDir}}/newLogList.txt"
+#    dest: "{{logFileLocAnsible}}"
+#    flat: yes
 
 #- name: Dowload Logs for each tar
 #  fetch:
