@@ -6,7 +6,7 @@
 - name: Extract importLogsOutput
   set_fact:
     out: " {{ importLogs.stdout }} "
-- name: Download all task logs
+- name: Download Import task logs
   shell: "echo '{{out}}' | tee {{buildBaseDir}}/log.txt"
   no_log: true
  
