@@ -29,13 +29,7 @@
      tarFileName: "{{buildBaseDir}}/tarDir/{{artifactName}}"
   when: (extension.stdout == 'tar' )
 
-- name:  Download artifact from Artifactory if it is tar
-  get_url:
-    url: "{{ artifactoryAbsoluteUrl }}"
-    dest: "{{ tarFileName }}"
-    url_username: "{{artifactUserName}}"
-    url_password: "{{artifact_password}}" 
-    mode: 0440
+
     
     
 
