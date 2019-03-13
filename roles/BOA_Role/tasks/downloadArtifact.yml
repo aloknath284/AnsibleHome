@@ -35,17 +35,6 @@
   set_fact:
      tarFileName: "{{buildBaseDir}}/tarDir/{{artifactName}}"
   when: (extension.stdout == 'tar' )
-     
-#- name: Download artifact from Artifactory if it is tar
-#  shell: " curl -u {{artifactUserName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -fo {{ tarFileName }}"
-#  when: not(
-#          (tarFileName is undefined)
-#          or
-#          (tarFileName  is none)
-#          or
-#          (tarFileName | trim == '')
-#        )
-#  no_log: true
 
 - name:  Download artifact from Artifactory if it is tar
   get_url:
@@ -54,13 +43,8 @@
     url_username: "{{artifactUserName}}"
     url_password: "{{artifact_password}}" 
     mode: 0440
-  when: not(
-          (tarFileName is undefined)
-          or
-          (tarFileName  is none)
-          or
-          (tarFileName | trim == '')
-        )
+    
+    
 
 - name: ZipFileName is set
   set_fact:
@@ -74,16 +58,4 @@
     url_username: "{{artifactUserName}}"
     url_password: "{{artifact_password}}" 
     mode: 0440
- 
-     
-#- name: Download artifact from Artifactory if it is zip
-#  shell: " curl -u {{artifactUserName}}:{{artifact_password}} {{ artifactoryAbsoluteUrl }} -fo {{ zipFileName }}"
-#  when: not(
-#          (zipFileName is undefined)
-#          or
-#          (zipFileName  is none)
-#          or
-#          (zipFileName | trim == '')
-#        )
-#  no_log: true
 
