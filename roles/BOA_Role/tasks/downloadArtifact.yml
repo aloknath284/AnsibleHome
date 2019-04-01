@@ -35,7 +35,7 @@
     dest: "{{ tarFileName }}"
     url_username: "{{artifactUserName}}"
     url_password: "{{artifact_password}}" 
-    mode: 0440
+    #mode: 0440
   when: (extension.stdout == 'tar' )
 
 - name: ZipFileName is set
@@ -49,5 +49,5 @@
     dest: "{{ zipFileName }}"
     url_username: "{{artifactUserName}}"
     url_password: "{{artifact_password}}" 
-    mode: 0440
+    #mode: 0440
   when: (extension.stdout == 'zip' )
